@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ================================================================
+       PASS 1: Ensure every target HediffDef has a <comps> node.
+       PatchOperationConditional only fires the <nomatch> block when
+       the xpath finds nothing, so hediffs that already have <comps>
+       (e.g. BionicArm, ArchotechArm) are left unchanged.
+       ================================================================ -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="BionicArm"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="BionicArm"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="BionicEye"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="BionicEye"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="BionicLeg"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="BionicLeg"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="BionicHeart"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="BionicHeart"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="BionicStomach"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="BionicStomach"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="BionicEar"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="BionicEar"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="BionicJaw"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="BionicJaw"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="BionicSpine"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="BionicSpine"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="BionicTongue"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="BionicTongue"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="ArchotechArm"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="ArchotechArm"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="ArchotechEye"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="ArchotechEye"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="ArchotechLeg"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="ArchotechLeg"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- ================================================================
+       PASS 2: Add rechargeable comp to each target's /comps.
+       Grouped by tier and depleted consequence.
+       ================================================================ -->
+
+  <!-- Basic tier, partEfficiency 1.25 → depleted leaves 50% efficiency -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="BionicArm" or defName="BionicEye" or defName="BionicLeg" or defName="BionicHeart" or defName="BionicStomach" or defName="BionicEar" or defName="BionicJaw"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <partEfficiencyOffset>-0.75</partEfficiencyOffset>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Basic tier, partEfficiency 1.0 (natural-equivalent) → depleted leaves 50% efficiency -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="BionicSpine" or defName="BionicTongue"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <partEfficiencyOffset>-0.50</partEfficiencyOffset>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Advanced tier, partEfficiency 1.50 → depleted leaves 50% efficiency -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="ArchotechArm" or defName="ArchotechEye" or defName="ArchotechLeg"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>150</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <partEfficiencyOffset>-1.00</partEfficiencyOffset>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

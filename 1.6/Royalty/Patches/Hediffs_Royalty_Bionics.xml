@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ================================================================
+       PASS 1: Ensure every target HediffDef has a <comps> node.
+       Hediffs that already have <comps> (Neurocalculator, LearningAssistant,
+       DrillArm, FieldHand, DetoxifierStomach, ReprocessorStomach,
+       NuclearStomach, CircadianAssistant, CircadianHalfCycler,
+       PsychicHarmonizer) are untouched by the nomatch block.
+       ================================================================ -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="DrillArm"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="DrillArm"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="FieldHand"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="FieldHand"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="Neurocalculator"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="Neurocalculator"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LearningAssistant"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LearningAssistant"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="GastroAnalyzer"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="GastroAnalyzer"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="Immunoenhancer"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="Immunoenhancer"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="Coagulator"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="Coagulator"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="HealingEnhancer"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="HealingEnhancer"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="ToughskinGland"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="ToughskinGland"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="ArmorskinGland"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="ArmorskinGland"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="StoneskinGland"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="StoneskinGland"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="AestheticShaper"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="AestheticShaper"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="AestheticNose"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="AestheticNose"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LoveEnhancer"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LoveEnhancer"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="DetoxifierStomach"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="DetoxifierStomach"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="ReprocessorStomach"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="ReprocessorStomach"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="NuclearStomach"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="NuclearStomach"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="CircadianAssistant"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="CircadianAssistant"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="CircadianHalfCycler"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="CircadianHalfCycler"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="PsychicSensitizer"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="PsychicSensitizer"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="PsychicHarmonizer"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="PsychicHarmonizer"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="PsychicReader"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="PsychicReader"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- ================================================================
+       PASS 2: Add rechargeable comp.
+       ================================================================ -->
+
+  <!-- ==== BASIC TIER (maxCharge 100) ==== -->
+
+  <!-- Specialized arm prosthetics — partEfficiency 1.0 default, offset leaves 50% -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="DrillArm" or defName="FieldHand"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <partEfficiencyOffset>-0.50</partEfficiencyOffset>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Neurocalculator: cancels ResearchSpeed +0.2 bonus -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="Neurocalculator"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <ResearchSpeed>-0.2</ResearchSpeed>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- LearningAssistant: cancels GlobalLearningFactor +0.2 bonus -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="LearningAssistant"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <GlobalLearningFactor>-0.2</GlobalLearningFactor>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- GastroAnalyzer: cancels CookSpeed +5 bonus -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="GastroAnalyzer"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <CookSpeed>-5</CookSpeed>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Immunoenhancer: cancels ImmunityGainSpeed +0.08 bonus -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="Immunoenhancer"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <ImmunityGainSpeed>-0.08</ImmunityGainSpeed>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Coagulator / HealingEnhancer / LoveEnhancer / CircadianHalfCycler:
+       Effects (totalBleedFactor, naturalHealingFactor, disablesNeeds) cannot be
+       cancelled via StatDef offsets in the current framework — no depleted penalty. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="Coagulator" or defName="HealingEnhancer" or defName="LoveEnhancer" or defName="CircadianHalfCycler"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- ToughskinGland: cancels armour stat offsets -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="ToughskinGland"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <ArmorRating_Sharp>-0.35</ArmorRating_Sharp>
+            <ArmorRating_Blunt>-0.10</ArmorRating_Blunt>
+            <ArmorRating_Heat>-0.30</ArmorRating_Heat>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- ArmorskinGland: cancels armour stat offsets -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="ArmorskinGland"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <ArmorRating_Sharp>-0.52</ArmorRating_Sharp>
+            <ArmorRating_Blunt>-0.20</ArmorRating_Blunt>
+            <ArmorRating_Heat>-0.40</ArmorRating_Heat>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- StoneskinGland: cancels armour stat offsets -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="StoneskinGland"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <ArmorRating_Sharp>-0.70</ArmorRating_Sharp>
+            <ArmorRating_Blunt>-0.30</ArmorRating_Blunt>
+            <ArmorRating_Heat>-0.50</ArmorRating_Heat>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- AestheticShaper / AestheticNose: cancel PawnBeauty +1 bonus -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AestheticShaper" or defName="AestheticNose"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <PawnBeauty>-1</PawnBeauty>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Replacement stomachs (partEfficiency 1.25 body parts) — offset leaves 50% efficiency -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="DetoxifierStomach" or defName="ReprocessorStomach" or defName="NuclearStomach"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <partEfficiencyOffset>-0.75</partEfficiencyOffset>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- CircadianAssistant: RestFallRateFactor is a HediffStage field, not a StatDef —
+       cannot be cancelled via the framework; no depleted penalty. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="CircadianAssistant"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- ==== ADVANCED TIER (maxCharge 200) ==== -->
+
+  <!-- PsychicSensitizer: cancels PsychicSensitivity +0.25 bonus -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="PsychicSensitizer"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>150</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <PsychicSensitivity>-0.25</PsychicSensitivity>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- PsychicHarmonizer: HediffCompProperties_PsychicHarmonizer effect cannot be cancelled
+       via the framework; no depleted penalty. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="PsychicHarmonizer"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>150</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- PsychicReader: cancels NegotiationAbility +0.50 and TradePriceImprovement +0.10 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="PsychicReader"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>150</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <NegotiationAbility>-0.50</NegotiationAbility>
+            <TradePriceImprovement>-0.10</TradePriceImprovement>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

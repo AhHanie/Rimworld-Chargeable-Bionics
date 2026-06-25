@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Chargeable Bionics</name>
+    <author>Sk</author>
+    <packageId>sk.chargebionics</packageId>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <description>Gives all vanilla bionics and archotech implants a charge bar that drains over time.</description>
+    <modVersion>1.0.0</modVersion>
+    <url>https://steamcommunity.com/sharedfiles/filedetails/?id=3751653311</url>
+    <modDependencies>
+        <li>
+            <packageId>sk.chargehediff</packageId>
+            <displayName>Chargeable Hediffs Framework</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/3751642856</steamWorkshopUrl>
+        </li>
+    </modDependencies>
+</ModMetaData>

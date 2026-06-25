@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>CB_ChargeStation</defName>
+    <label>bionic charging station</label>
+    <description>A compact powered station that recharges implanted bionics and artificial organs. Connect it to the power grid and have a pawn with rechargeable implants interact with it.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>ChargeableBionics/Things/Building/Station</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>true</rotatable>
+    <designationCategory>Production</designationCategory>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <researchPrerequisites>
+      <li>Bionics</li>
+    </researchPrerequisites>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <altitudeLayer>Building</altitudeLayer>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToBuild>3000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Mass>15</Mass>
+    </statBases>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+        <shortCircuitInRain>true</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+    <modExtensions>
+      <li Class="Chargeable_Hediffs_Framework.ChargeStationExtension">
+        <chargeRate>0.0833333</chargeRate>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>
