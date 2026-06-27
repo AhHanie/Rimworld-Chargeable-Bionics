@@ -5,7 +5,7 @@
        PASS 1: Ensure every target HediffDef has a <comps> node.
        PatchOperationConditional only fires the <nomatch> block when
        the xpath finds nothing, so hediffs that already have <comps>
-       (e.g. BionicArm, ArchotechArm) are left unchanged.
+       are left unchanged.
        ================================================================ -->
 
   <Operation Class="PatchOperationConditional">
@@ -80,30 +80,6 @@
     </nomatch>
   </Operation>
 
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/HediffDef[defName="ArchotechArm"]/comps</xpath>
-    <nomatch Class="PatchOperationAdd">
-      <xpath>Defs/HediffDef[defName="ArchotechArm"]</xpath>
-      <value><comps /></value>
-    </nomatch>
-  </Operation>
-
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/HediffDef[defName="ArchotechEye"]/comps</xpath>
-    <nomatch Class="PatchOperationAdd">
-      <xpath>Defs/HediffDef[defName="ArchotechEye"]</xpath>
-      <value><comps /></value>
-    </nomatch>
-  </Operation>
-
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/HediffDef[defName="ArchotechLeg"]/comps</xpath>
-    <nomatch Class="PatchOperationAdd">
-      <xpath>Defs/HediffDef[defName="ArchotechLeg"]</xpath>
-      <value><comps /></value>
-    </nomatch>
-  </Operation>
-
   <!-- ================================================================
        PASS 2: Add rechargeable comp to each target's /comps.
        Grouped by tier and depleted consequence.
@@ -132,20 +108,6 @@
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
           <partEfficiencyOffset>-0.50</partEfficiencyOffset>
-        </depletedConsequences>
-      </li>
-    </value>
-  </Operation>
-
-  <!-- Advanced tier, partEfficiency 1.50 → depleted leaves 50% efficiency -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/HediffDef[defName="ArchotechArm" or defName="ArchotechEye" or defName="ArchotechLeg"]/comps</xpath>
-    <value>
-      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
-        <maxCharge>150</maxCharge>
-        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
-        <depletedConsequences>
-          <partEfficiencyOffset>-1.00</partEfficiencyOffset>
         </depletedConsequences>
       </li>
     </value>

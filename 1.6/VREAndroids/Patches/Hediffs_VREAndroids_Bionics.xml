@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ================================================================
+       PASS 1: Ensure every target HediffDef has a <comps> node.
+       PatchOperationConditional only fires the <nomatch> block when
+       the xpath finds nothing, so hediffs that already have <comps>
+       are left unchanged.
+       ================================================================ -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="VREA_NeuroPump"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="VREA_NeuroPump"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="VREA_AirFilter"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="VREA_AirFilter"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="VREA_Neutrofilter"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="VREA_Neutrofilter"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="VREA_MetabolismRegulator"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="VREA_MetabolismRegulator"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="VREA_OpticalUnit"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="VREA_OpticalUnit"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="VREA_AudioProcessor"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="VREA_AudioProcessor"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="VREA_ArtificialNose"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="VREA_ArtificialNose"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="VREA_ArtificialJaw"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="VREA_ArtificialJaw"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="VREA_ArtificialRibcage"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="VREA_ArtificialRibcage"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="VREA_ArtificialSpine"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="VREA_ArtificialSpine"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="VREA_AndroidLeg"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="VREA_AndroidLeg"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="VREA_AndroidFoot"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="VREA_AndroidFoot"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="VREA_AndroidArm"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="VREA_AndroidArm"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="VREA_AndroidHand"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="VREA_AndroidHand"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- ================================================================
+       PASS 2: Add rechargeable comp to each target's /comps.
+       All targets inherit partEfficiency 1.0 from VREA_AndroidBodyPartBase.
+       ================================================================ -->
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="VREA_NeuroPump" or defName="VREA_AirFilter" or defName="VREA_Neutrofilter" or defName="VREA_MetabolismRegulator" or defName="VREA_OpticalUnit" or defName="VREA_AudioProcessor" or defName="VREA_ArtificialNose" or defName="VREA_ArtificialJaw" or defName="VREA_ArtificialRibcage" or defName="VREA_ArtificialSpine" or defName="VREA_AndroidLeg" or defName="VREA_AndroidFoot" or defName="VREA_AndroidArm" or defName="VREA_AndroidHand"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <partEfficiencyOffset>-0.50</partEfficiencyOffset>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

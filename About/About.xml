@@ -6,8 +6,8 @@
     <supportedVersions>
         <li>1.6</li>
     </supportedVersions>
-    <description>Gives all vanilla bionics and archotech implants a charge bar that drains over time.</description>
-    <modVersion>1.0.0</modVersion>
+    <description>Gives vanilla bionics a charge bar that drains over time.</description>
+    <modVersion>1.1.0</modVersion>
     <url>https://steamcommunity.com/sharedfiles/filedetails/?id=3751653311</url>
     <modDependencies>
         <li>
@@ -16,4 +16,7 @@
             <steamWorkshopUrl>steam://url/CommunityFilePage/3751642856</steamWorkshopUrl>
         </li>
     </modDependencies>
+    <loadAfter>
+        <li>vanillaracesexpanded.android</li>
+    </loadAfter>
 </ModMetaData>
