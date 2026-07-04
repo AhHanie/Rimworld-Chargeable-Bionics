@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ================================================================
+       PASS 1: Ensure every target HediffDef has a <comps> node.
+       SimpleProstheticArm and PowerClaw already have <comps>
+       (HediffCompProperties_VerbGiver) and are left untouched.
+       ================================================================ -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="SimpleProstheticLeg"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="SimpleProstheticLeg"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="SimpleProstheticHeart"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="SimpleProstheticHeart"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="CochlearImplant"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="CochlearImplant"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="Joywire"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="Joywire"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="Painstopper"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="Painstopper"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- ================================================================
+       PASS 2: Add rechargeable comp to each target's /comps.
+       Lower tier than bionics: maxCharge 60.
+       Depleted consequence leaves roughly half of vanilla partEfficiency.
+       ================================================================ -->
+
+  <!-- SimpleProstheticLeg: partEfficiency 0.85 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="SimpleProstheticLeg"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>60</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <partEfficiencyOffset>-0.43</partEfficiencyOffset>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- SimpleProstheticArm: partEfficiency 0.50 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="SimpleProstheticArm"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>60</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <partEfficiencyOffset>-0.25</partEfficiencyOffset>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- SimpleProstheticHeart: partEfficiency 0.80 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="SimpleProstheticHeart"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>60</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <partEfficiencyOffset>-0.40</partEfficiencyOffset>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- CochlearImplant: partEfficiency 0.65 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="CochlearImplant"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>60</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <partEfficiencyOffset>-0.33</partEfficiencyOffset>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- PowerClaw: partEfficiency 1.00 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="PowerClaw"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>60</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <partEfficiencyOffset>-0.50</partEfficiencyOffset>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Joywire / Painstopper: brain implants with no positive partEfficiency/statOffset
+       to cancel (Joywire already penalizes consciousness; Painstopper changes pain
+       handling through painFactor) — comp only, no depleted penalty. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="Joywire" or defName="Painstopper"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>60</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ================================================================
+       PASS 1: Ensure every target HediffDef has a <comps> node.
+       DrillArm, FieldHand, HandTalon, ElbowBlade, KneeSpike, VenomFangs,
+       and VenomTalon already have <comps> (HediffCompProperties_VerbGiver)
+       and are left untouched. Mindscrew has no comps.
+       ================================================================ -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="Mindscrew"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="Mindscrew"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- ================================================================
+       PASS 2: Add rechargeable comp.
+       ================================================================ -->
+
+  <!-- Specialized arm prosthetics — partEfficiency 1.0 default, offset leaves 50% -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="DrillArm" or defName="FieldHand"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <partEfficiencyOffset>-0.50</partEfficiencyOffset>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Mindscrew / HandTalon / ElbowBlade / KneeSpike / VenomFangs / VenomTalon:
+       combat implants whose effects live on HediffCompProperties_VerbGiver tools
+       (power, armorPenetration, capacities) or plain pain infliction — none of
+       which the framework's depletedConsequences can cancel — comp only, no
+       depleted penalty. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="Mindscrew" or defName="HandTalon" or defName="ElbowBlade" or defName="KneeSpike" or defName="VenomFangs" or defName="VenomTalon"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

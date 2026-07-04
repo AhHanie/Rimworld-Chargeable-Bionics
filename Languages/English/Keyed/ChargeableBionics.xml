@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ChargeableBionics.SettingsTitle>Chargeable Bionics</ChargeableBionics.SettingsTitle>
+  <ChargeableBionics.LoadingLabel>Chargeable Bionics is loading...</ChargeableBionics.LoadingLabel>
+
+  <ChargeableBionics.EnableProstheticPatches>Enable rechargeable prosthetics</ChargeableBionics.EnableProstheticPatches>
+  <ChargeableBionics.EnableProstheticPatchesTooltip>When enabled, basic industrial prosthetics (prosthetic limbs, cochlear implants, power claws, and similar Royalty implants) also need to be recharged, using a lower capacity tier than true bionics. When disabled, these prosthetics behave as in vanilla.</ChargeableBionics.EnableProstheticPatchesTooltip>
+  <ChargeableBionics.RestartRequired>Changes to this setting require a restart or mod list reload to take effect.</ChargeableBionics.RestartRequired>
+
+</LanguageData>

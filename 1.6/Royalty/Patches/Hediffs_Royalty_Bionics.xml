@@ -4,26 +4,10 @@
   <!-- ================================================================
        PASS 1: Ensure every target HediffDef has a <comps> node.
        Hediffs that already have <comps> (Neurocalculator, LearningAssistant,
-       DrillArm, FieldHand, DetoxifierStomach, ReprocessorStomach,
-       NuclearStomach, CircadianAssistant, CircadianHalfCycler,
-       PsychicHarmonizer) are untouched by the nomatch block.
+       DetoxifierStomach, ReprocessorStomach, NuclearStomach,
+       CircadianAssistant, CircadianHalfCycler, PsychicHarmonizer) are
+       untouched by the nomatch block.
        ================================================================ -->
-
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/HediffDef[defName="DrillArm"]/comps</xpath>
-    <nomatch Class="PatchOperationAdd">
-      <xpath>Defs/HediffDef[defName="DrillArm"]</xpath>
-      <value><comps /></value>
-    </nomatch>
-  </Operation>
-
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/HediffDef[defName="FieldHand"]/comps</xpath>
-    <nomatch Class="PatchOperationAdd">
-      <xpath>Defs/HediffDef[defName="FieldHand"]</xpath>
-      <value><comps /></value>
-    </nomatch>
-  </Operation>
 
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/HediffDef[defName="Neurocalculator"]/comps</xpath>
@@ -190,20 +174,6 @@
        ================================================================ -->
 
   <!-- ==== BASIC TIER (maxCharge 100) ==== -->
-
-  <!-- Specialized arm prosthetics — partEfficiency 1.0 default, offset leaves 50% -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/HediffDef[defName="DrillArm" or defName="FieldHand"]/comps</xpath>
-    <value>
-      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
-        <maxCharge>100</maxCharge>
-        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
-        <depletedConsequences>
-          <partEfficiencyOffset>-0.50</partEfficiencyOffset>
-        </depletedConsequences>
-      </li>
-    </value>
-  </Operation>
 
   <!-- Neurocalculator: cancels ResearchSpeed +0.2 bonus -->
   <Operation Class="PatchOperationAdd">
