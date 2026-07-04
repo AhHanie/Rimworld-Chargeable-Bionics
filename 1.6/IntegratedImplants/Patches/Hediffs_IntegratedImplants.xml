@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ================================================================
+       PASS 1: Ensure every target HediffDef has a <comps> node.
+       PatchOperationConditional only fires the <nomatch> block when
+       the xpath finds nothing, so hediffs that already have <comps>
+       are left unchanged.
+       ================================================================ -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="HackingPortImplant"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="HackingPortImplant"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="StrengthEnhancer"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="StrengthEnhancer"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="Synthmarrow"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="Synthmarrow"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_SubdermalArmour"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_SubdermalArmour"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="CranialInsulation"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="CranialInsulation"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="WiredReflex"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="WiredReflex"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="InternalClimateControlImplant"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="InternalClimateControlImplant"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="SkeletalBracing"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="SkeletalBracing"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="EltexAdornments"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="EltexAdornments"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_FaceplateArachnid"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_FaceplateArachnid"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_BionicTail"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_BionicTail"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_ManipulationTail"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_ManipulationTail"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="BiochameleonDevice"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="BiochameleonDevice"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_FireSupressionSystem"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_FireSupressionSystem"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="CryptoWakeImplant"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="CryptoWakeImplant"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_Neurostreamer"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_Neurostreamer"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_CommsImplant"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_CommsImplant"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_NeuralStunner"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_NeuralStunner"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_BrainDetonator"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_BrainDetonator"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_Voicelock"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_Voicelock"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_StealthSystem"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_StealthSystem"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_ShoulderRocketPod"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_ShoulderRocketPod"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_ShoulderMortar"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_ShoulderMortar"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_GourmandTongue"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_GourmandTongue"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LeftExtraBionicArm"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LeftExtraBionicArm"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="RightExtraBionicArm"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="RightExtraBionicArm"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LeftExtraPowerClaw"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LeftExtraPowerClaw"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="RightExtraPowerClaw"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="RightExtraPowerClaw"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="PsychicLevitator"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="PsychicLevitator"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="ArchotechVoicebox"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="ArchotechVoicebox"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_ArchotechBlackbox"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_ArchotechBlackbox"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_Vanguard"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_Vanguard"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LeftExtraArchotechArm"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LeftExtraArchotechArm"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="RightExtraArchotechArm"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="RightExtraArchotechArm"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- ================================================================
+       PASS 2: Add rechargeable comp. Grouped by tier and consequence.
+       ================================================================ -->
+
+  <!-- ==== TIER 1 (maxCharge 100), straight stat cancellation ==== -->
+
+  <!-- HackingPortImplant: cancels HackingSpeed factor x2 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="HackingPortImplant"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statFactors>
+            <HackingSpeed>0.5</HackingSpeed>
+          </statFactors>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- StrengthEnhancer: cancels CarryingCapacity +25 (+ optional VEF mass carry) and MeleeDamageFactor x1.25 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="StrengthEnhancer"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <CarryingCapacity>-25</CarryingCapacity>
+            <VEF_MassCarryCapacity MayRequire="oskarpotocki.vanillafactionsexpanded.core">-25</VEF_MassCarryCapacity>
+          </statOffsets>
+          <statFactors>
+            <MeleeDamageFactor>0.8</MeleeDamageFactor>
+          </statFactors>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Synthmarrow: cancels BloodRegenerationFactor +1. Periodic blood-loss healing pulse
+       (LTS_ChangeHediff modExtension) cannot be paused without code; charge still drains. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="Synthmarrow"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <BloodRegenerationFactor>-1</BloodRegenerationFactor>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- LTS_SubdermalArmour: cancels armour stat offsets -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="LTS_SubdermalArmour"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <ArmorRating_Sharp>-0.8</ArmorRating_Sharp>
+            <ArmorRating_Blunt>-0.3</ArmorRating_Blunt>
+            <ArmorRating_Heat>-0.2</ArmorRating_Heat>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- CranialInsulation: cancels I_BrainShockResistance +1 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="CranialInsulation"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <I_BrainShockResistance>-1</I_BrainShockResistance>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- WiredReflex: cancels optional VEF ranged dodge offset and MeleeDodgeChance factor x1.2 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="WiredReflex"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <VEF_RangedDodgeChance MayRequire="oskarpotocki.vanillafactionsexpanded.core">-0.50</VEF_RangedDodgeChance>
+          </statOffsets>
+          <statFactors>
+            <MeleeDodgeChance>0.8333333</MeleeDodgeChance>
+          </statFactors>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- InternalClimateControlImplant: cancels comfy temperature range widening -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="InternalClimateControlImplant"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <ComfyTemperatureMin>20</ComfyTemperatureMin>
+            <ComfyTemperatureMax>-20</ComfyTemperatureMax>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- SkeletalBracing: cancels CarryingCapacity +25 (+ optional VEF mass carry) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="SkeletalBracing"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <CarryingCapacity>-25</CarryingCapacity>
+            <VEF_MassCarryCapacity MayRequire="oskarpotocki.vanillafactionsexpanded.core">-25</VEF_MassCarryCapacity>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- EltexAdornments: cancels PsychicSensitivity +0.2 and optional Royalty entropy recovery bonus -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="EltexAdornments"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <PsychicSensitivity>-0.2</PsychicSensitivity>
+            <PsychicEntropyRecoveryRate MayRequire="ludeon.rimworld.royalty">-0.034</PsychicEntropyRecoveryRate>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- LTS_FaceplateArachnid: cancels vision/beauty stat offsets. capMods Sight bonus cannot be cancelled. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="LTS_FaceplateArachnid"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <ToxicEnvironmentResistance>-0.8</ToxicEnvironmentResistance>
+            <LTS_DarkVision>-1</LTS_DarkVision>
+            <PawnBeauty>1</PawnBeauty>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- LTS_BionicTail: cancels MeleeDodgeChance factor x1.2. capMods Moving/Manipulation bonuses cannot be cancelled. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="LTS_BionicTail"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statFactors>
+            <MeleeDodgeChance>0.8333333</MeleeDodgeChance>
+          </statFactors>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- LTS_ManipulationTail: cancels CarryingCapacity +25 (+ optional VEF mass carry). capMods Manipulation bonus cannot be cancelled. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="LTS_ManipulationTail"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <CarryingCapacity>-25</CarryingCapacity>
+            <VEF_MassCarryCapacity MayRequire="oskarpotocki.vanillafactionsexpanded.core">-25</VEF_MassCarryCapacity>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- ==== TIER 1 (maxCharge 100), charge-only ====
+       Ability-driven, verb-driven, custom-comp, or additive-only effects that the
+       framework cannot cancel via StatDefs. No depletedConsequences until custom
+       compat code is added. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="BiochameleonDevice" or defName="LTS_FireSupressionSystem" or defName="CryptoWakeImplant" or defName="LTS_Neurostreamer" or defName="LTS_CommsImplant" or defName="LTS_NeuralStunner" or defName="LTS_BrainDetonator" or defName="LTS_Voicelock" or defName="LTS_StealthSystem" or defName="LTS_ShoulderRocketPod" or defName="LTS_ShoulderMortar" or defName="LTS_GourmandTongue" or defName="LeftExtraBionicArm" or defName="RightExtraBionicArm" or defName="LeftExtraPowerClaw" or defName="RightExtraPowerClaw"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- ==== TIER 2 (maxCharge 150), straight stat cancellation ==== -->
+
+  <!-- PsychicLevitator: cancels MoveSpeed +0.20. Zero-factor TrapSpringChance immunity
+       cannot be reversed with a zero factor consequence; left uncancelled. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="PsychicLevitator"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>150</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <MoveSpeed>-0.20</MoveSpeed>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- ArchotechVoicebox: cancels social/trade stat offsets. capMods Talking bonus cannot be cancelled. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="ArchotechVoicebox"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>150</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <TradePriceImprovement>-0.25</TradePriceImprovement>
+            <SocialImpact>-0.5</SocialImpact>
+            <ArrestSuccessChance>-0.5</ArrestSuccessChance>
+            <NegotiationAbility>-0.5</NegotiationAbility>
+            <SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">-0.5</SuppressionPower>
+            <ConversionPower MayRequire="Ludeon.RimWorld.Ideology">-0.5</ConversionPower>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- LeftExtraArchotechArm / RightExtraArchotechArm: cancels MeleeCooldownFactor x0.8.
+       capMods Manipulation bonus cannot be cancelled. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="LeftExtraArchotechArm" or defName="RightExtraArchotechArm"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>150</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statFactors>
+            <MeleeCooldownFactor>1.25</MeleeCooldownFactor>
+          </statFactors>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- ==== TIER 2 (maxCharge 150), charge-only ====
+       LTS_ArchotechBlackbox's skill-decay immunity is a zero stat factor and cannot be
+       reversed with a zero factor consequence. LTS_Vanguard is purely ability-driven. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="LTS_ArchotechBlackbox" or defName="LTS_Vanguard"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>150</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

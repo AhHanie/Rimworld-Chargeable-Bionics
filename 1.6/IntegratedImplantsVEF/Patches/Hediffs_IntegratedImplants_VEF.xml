@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ================================================================
+       PASS 1: Ensure every target HediffDef has a <comps> node.
+       LTS_ShoulderBeamTurret additionally requires Odyssey and is handled
+       in the IntegratedImplantsVEFOdyssey folder instead.
+       ================================================================ -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_ShoulderTurret"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_ShoulderTurret"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_ShoulderChargeTurret"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_ShoulderChargeTurret"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- ================================================================
+       PASS 2: Add rechargeable comp.
+       Ability-driven turret togglers (GiveAbility + AddExtraHediffOnNPCSpawn),
+       no cancellable stat effect. Charge-only.
+       ================================================================ -->
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="LTS_ShoulderTurret" or defName="LTS_ShoulderChargeTurret"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

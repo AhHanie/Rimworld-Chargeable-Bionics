@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ================================================================
+       PASS 1: Ensure the target HediffDef has a <comps> node.
+       ================================================================ -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_CerebrexNodeImplant"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_CerebrexNodeImplant"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- ================================================================
+       PASS 2: Add rechargeable comp.
+       Cancels the mechanitor bandwidth/work-speed stat offsets. The
+       CallMechanoids/CallDropPods/DeactivateMechanoid abilities are
+       ability-driven and cannot be disabled via the framework; they
+       remain available while depleted.
+       ================================================================ -->
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="LTS_CerebrexNodeImplant"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>150</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <MechBandwidth>-15</MechBandwidth>
+            <WorkSpeedGlobalOffsetMech>-0.12</WorkSpeedGlobalOffsetMech>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

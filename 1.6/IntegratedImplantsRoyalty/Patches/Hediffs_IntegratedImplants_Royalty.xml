@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ================================================================
+       PASS 1: Ensure every target HediffDef has a <comps> node.
+       ================================================================ -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="NeuralHeatsink"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="NeuralHeatsink"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LeftExtraDrillArm"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LeftExtraDrillArm"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="RightExtraDrillArm"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="RightExtraDrillArm"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LeftExtraFieldHand"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LeftExtraFieldHand"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="RightExtraFieldHand"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="RightExtraFieldHand"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_ScorpionTail"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_ScorpionTail"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_PrestigeSubdermalArmour"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_PrestigeSubdermalArmour"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- ================================================================
+       PASS 2: Add rechargeable comp.
+       ================================================================ -->
+
+  <!-- ==== TIER 1 (maxCharge 100) ==== -->
+
+  <!-- NeuralHeatsink: cancels PsychicEntropyGain factor x0.75 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="NeuralHeatsink"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statFactors>
+            <PsychicEntropyGain>1.3333333</PsychicEntropyGain>
+          </statFactors>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- LeftExtraDrillArm / RightExtraDrillArm: cancels fixed MiningSpeed/DeepDrillingSpeed offsets.
+       Per-stage MeleeCooldownFactor/capMods mastery ramp is left uncancelled — a single flat
+       depleted consequence cannot represent a value that changes across adaptation stages. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="LeftExtraDrillArm" or defName="RightExtraDrillArm"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <MiningSpeed>-1.60</MiningSpeed>
+            <DeepDrillingSpeed>-0.7</DeepDrillingSpeed>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- LeftExtraFieldHand / RightExtraFieldHand: cancels fixed PlantWorkSpeed offset.
+       Per-stage mastery ramp is left uncancelled (see DrillArm note above). -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="LeftExtraFieldHand" or defName="RightExtraFieldHand"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <PlantWorkSpeed>-1.60</PlantWorkSpeed>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- LTS_ScorpionTail: melee weapon verb only, no cancellable stat effect. Charge-only. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="LTS_ScorpionTail"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- ==== TIER 2 (maxCharge 150) ==== -->
+
+  <!-- LTS_PrestigeSubdermalArmour: cancels armour and psychic stat offsets -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="LTS_PrestigeSubdermalArmour"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>150</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <ArmorRating_Sharp>-0.8</ArmorRating_Sharp>
+            <ArmorRating_Blunt>-0.3</ArmorRating_Blunt>
+            <ArmorRating_Heat>-0.2</ArmorRating_Heat>
+            <PsychicSensitivity>-0.1</PsychicSensitivity>
+            <PsychicEntropyRecoveryRate>-0.066</PsychicEntropyRecoveryRate>
+          </statOffsets>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

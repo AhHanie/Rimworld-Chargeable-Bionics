@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ================================================================
+       PASS 1: Ensure every target HediffDef has a <comps> node.
+       LTS_EmergencyVacsealActive is a transient effect hediff, not a
+       persistent implant, and is intentionally excluded from Phase 1 scope.
+       ================================================================ -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LTS_EmergencyVacseal"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LTS_EmergencyVacseal"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- ================================================================
+       PASS 2: Add rechargeable comp.
+       Ability is a reloadable ability (chemfuel ammo), not a cancellable
+       stat effect. Charge-only.
+       ================================================================ -->
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="LTS_EmergencyVacseal"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>
