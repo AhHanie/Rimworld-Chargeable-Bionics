@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Alpha Implants 1.6 core animal implants. Optional 1.6 DLC integrations
+       are patched in their corresponding DLC-gated compatibility folders -->
+
+  <!-- PASS 1: Ensure each target has its own comps node before adding the
+       rechargeable comp. Keep these checks per-def: a matching def's comps
+       must never suppress creation for another target that lacks one. -->
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalArchotechTail"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalArchotechTail"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalSynapticReinforcer"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalSynapticReinforcer"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicTail"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicTail"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicJaw"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicJaw"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicHeart"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicHeart"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicSpine"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicSpine"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicStomach"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicStomach"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicEye"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicEye"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicNose"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicNose"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicEar"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicEar"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicBeak"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicBeak"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicTentacle"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicTentacle"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicBuoyancy"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicBuoyancy"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicWing"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicWing"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalShrinker"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalShrinker"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalEnlarger"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalEnlarger"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalDenture"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalDenture"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticTail"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticTail"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticJaw"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticJaw"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticHeart"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticHeart"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticSpine"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticSpine"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticStomach"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticStomach"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticLung"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticLung"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticKidney"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticKidney"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticLiver"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticLiver"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticBeak"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticBeak"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticTentacle"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticTentacle"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticBuoyancy"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticBuoyancy"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticWing"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalProstheticWing"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalPainstopper"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalPainstopper"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalThermoregulator"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalThermoregulator"]</xpath><value><comps /></value></nomatch></Operation>
+
+  <!-- PASS 2: Animal bionics. Depleted parts retain approximately half their original efficiency. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalBionicLeg" or defName="AI_AnimalBionicArm" or defName="AI_AnimalBionicJaw" or defName="AI_AnimalBionicHeart" or defName="AI_AnimalBionicStomach" or defName="AI_AnimalBionicEye" or defName="AI_AnimalBionicNose" or defName="AI_AnimalBionicEar" or defName="AI_AnimalBionicBeak" or defName="AI_AnimalBionicTentacle" or defName="AI_AnimalBionicBuoyancy" or defName="AI_AnimalBionicWing" or defName="AI_AnimalBionicBlade" or defName="AI_AnimalBionicStinger" or defName="AI_AnimalBionicHorn"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences><partEfficiencyOffset>-0.63</partEfficiencyOffset></depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- The Alpha Animals and Alpha Mythology implant sets are part of Alpha Implants'
+       base 1.6 folder. Their active effects are provided by abilities/verb-givers. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalVenomousSpitter" or defName="AI_AnimalAcidicSpitter" or defName="AI_AnimalLightFocusingLens" or defName="AI_AnimalHyperAcidicStomach" or defName="AI_AnimalPetrifyingGaze"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>100</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.38</partEfficiencyOffset></depletedConsequences></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalRangedSpinneret" or defName="AI_AnimalBarbedQuillThrower" or defName="AI_AnimalQuadTeslaCannon" or defName="AI_AnimalBioelectricOrgan" or defName="AI_AnimalWispFire" or defName="AI_AnimalAcidicBreath" or defName="AI_AnimalFireBreath" or defName="AI_AnimalToxicBreath"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>100</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick></li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalBionicSpine"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences><partEfficiencyOffset>-0.50</partEfficiencyOffset></depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Effects that are implemented by abilities, verb-givers, stages, or mod code
+       cannot be selectively disabled by the framework, so these still require charge
+       but have no additional depleted penalty. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalBionicTail" or defName="AI_AnimalStealthskinImplant" or defName="AI_AnimalWorkChipFlick" or defName="AI_AnimalWorkChipClean" or defName="AI_AnimalWorkChipSlaughter" or defName="AI_AnimalWorkChipMine" or defName="AI_AnimalWorkChipFeedPatient" or defName="AI_AnimalWorkChipHarvest" or defName="AI_AnimalWorkChipHunt" or defName="AI_AnimalWorkChipSow" or defName="AI_AnimalShrinker" or defName="AI_AnimalEnlarger"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Archotech animal implants use a larger 200-unit charge reserve. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalArchotechLeg" or defName="AI_AnimalArchotechArm" or defName="AI_AnimalSynapticReinforcer"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>200</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences><partEfficiencyOffset>-0.75</partEfficiencyOffset></depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalArchotechTail"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>200</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Animal prosthetics use the same lower, 60-unit charge tier as vanilla prosthetics. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalProstheticLeg" or defName="AI_AnimalProstheticBuoyancy" or defName="AI_AnimalProstheticWing"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.43</partEfficiencyOffset></depletedConsequences></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalProstheticArm" or defName="AI_AnimalProstheticBlade" or defName="AI_AnimalProstheticStinger" or defName="AI_AnimalProstheticHorn"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.25</partEfficiencyOffset></depletedConsequences></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalProstheticJaw" or defName="AI_AnimalProstheticBeak"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.48</partEfficiencyOffset></depletedConsequences></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalDenture" or defName="AI_AnimalProstheticHeart"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.40</partEfficiencyOffset></depletedConsequences></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalProstheticSpine"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.30</partEfficiencyOffset></depletedConsequences></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalProstheticStomach" or defName="AI_AnimalProstheticLung" or defName="AI_AnimalProstheticKidney" or defName="AI_AnimalProstheticLiver"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.38</partEfficiencyOffset></depletedConsequences></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalPowerClaw"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.50</partEfficiencyOffset></depletedConsequences></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalProstheticTentacle"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.35</partEfficiencyOffset></depletedConsequences></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalJump"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.45</partEfficiencyOffset></depletedConsequences></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalProstheticTail" or defName="AI_AnimalPainstopper" or defName="AI_AnimalController" or defName="AI_AnimalThermoregulator" or defName="AI_AnimalChemfuelNodules"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick></li></value>
+  </Operation>
+
+</Patch>

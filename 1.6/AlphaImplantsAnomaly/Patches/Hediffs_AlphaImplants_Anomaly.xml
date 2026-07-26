@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalTentacle"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>100</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.60</partEfficiencyOffset></depletedConsequences></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalToughspikes" or defName="AI_AnimalRangedTrispikes" or defName="AI_AnimalPseudoDeadlifeShaper"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>100</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick></li></value>
+  </Operation>
+</Patch>
