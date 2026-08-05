@@ -7,8 +7,6 @@
   <!-- PASS 1: Ensure each target has its own comps node before adding the
        rechargeable comp. Keep these checks per-def: a matching def's comps
        must never suppress creation for another target that lacks one. -->
-  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalArchotechTail"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalArchotechTail"]</xpath><value><comps /></value></nomatch></Operation>
-  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalSynapticReinforcer"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalSynapticReinforcer"]</xpath><value><comps /></value></nomatch></Operation>
   <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicTail"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicTail"]</xpath><value><comps /></value></nomatch></Operation>
   <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicJaw"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicJaw"]</xpath><value><comps /></value></nomatch></Operation>
   <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicHeart"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicHeart"]</xpath><value><comps /></value></nomatch></Operation>
@@ -86,27 +84,9 @@
     </value>
   </Operation>
 
-  <!-- Archotech animal implants use a larger 200-unit charge reserve. -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/HediffDef[defName="AI_AnimalArchotechLeg" or defName="AI_AnimalArchotechArm" or defName="AI_AnimalSynapticReinforcer"]/comps</xpath>
-    <value>
-      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
-        <maxCharge>200</maxCharge>
-        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
-        <depletedConsequences><partEfficiencyOffset>-0.75</partEfficiencyOffset></depletedConsequences>
-      </li>
-    </value>
-  </Operation>
-
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/HediffDef[defName="AI_AnimalArchotechTail"]/comps</xpath>
-    <value>
-      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
-        <maxCharge>200</maxCharge>
-        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
-      </li>
-    </value>
-  </Operation>
+  <!-- Archotech animal implants (AI_AnimalArchotechLeg, AI_AnimalArchotechArm,
+       AI_AnimalArchotechTail, AI_AnimalSynapticReinforcer) are intentionally
+       left self-powered and receive no rechargeable comp. -->
 
   <!-- Animal prosthetics use the same lower, 60-unit charge tier as vanilla prosthetics. -->
   <Operation Class="PatchOperationAdd">
