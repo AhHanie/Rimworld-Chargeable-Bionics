@@ -12,6 +12,7 @@ namespace Chargeable_Bionics
     {
         public Mod(ModContentPack content) : base(content)
         {
+            GetSettings<ModSettings>();
             LongEventHandler.QueueLongEvent(Init, "ChargeableBionics.LoadingLabel", doAsynchronously: true, null);
         }
 

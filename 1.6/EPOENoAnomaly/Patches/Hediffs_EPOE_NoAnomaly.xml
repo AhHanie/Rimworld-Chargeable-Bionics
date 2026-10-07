@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ================================================================
+       EPOE glitterworld AI cores, base values (Anomaly not active).
+       EPOE ships a different HediffDefs_Glitterworld_AnomalyAffected.xml when Anomaly is active.
+       The EMP reaction and the socialFightChanceFactor stay active at zero charge.
+       ================================================================ -->
+
+  <!-- ConstructorCore: reverses the construction bonuses
+       Targets: ConstructorCore -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="ConstructorCore") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="ConstructorCore") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <statOffsets>
+              <ConstructionSpeed>-0.25</ConstructionSpeed>
+              <ConstructSuccessChance>-0.15</ConstructSuccessChance>
+              <FixBrokenDownBuildingSuccessChance>-0.15</FixBrokenDownBuildingSuccessChance>
+              <SmoothingSpeed>-0.25</SmoothingSpeed>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- EPIA_AuxiliaryAI_Artisan: reverses the labour bonuses
+       Targets: EPIA_AuxiliaryAI_Artisan -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="EPIA_AuxiliaryAI_Artisan") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="EPIA_AuxiliaryAI_Artisan") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <statOffsets>
+              <GeneralLaborSpeed>-0.15</GeneralLaborSpeed>
+              <SmeltingSpeed>-0.20</SmeltingSpeed>
+              <ButcheryMechanoidSpeed>-0.10</ButcheryMechanoidSpeed>
+              <ButcheryMechanoidEfficiency>-0.10</ButcheryMechanoidEfficiency>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- DoctorCore: reverses the medical bonuses
+       Targets: DoctorCore -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="DoctorCore") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="DoctorCore") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <statOffsets>
+              <MedicalTendSpeed>-0.15</MedicalTendSpeed>
+              <MedicalOperationSpeed>-0.15</MedicalOperationSpeed>
+              <MedicalTendQuality>-0.15</MedicalTendQuality>
+              <MedicalSurgerySuccessChance>-0.20</MedicalSurgerySuccessChance>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- MinerCore: reverses the mining bonuses
+       Targets: MinerCore -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="MinerCore") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="MinerCore") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <statOffsets>
+              <MiningSpeed>-0.25</MiningSpeed>
+              <DeepDrillingSpeed>-0.25</DeepDrillingSpeed>
+              <MiningYield>-0.15</MiningYield>
+              <SmoothingSpeed>-0.10</SmoothingSpeed>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- FarmerCore: reverses the farming bonuses
+       Targets: FarmerCore -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="FarmerCore") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="FarmerCore") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <statOffsets>
+              <PlantWorkSpeed>-0.25</PlantWorkSpeed>
+              <PlantHarvestYield>-0.15</PlantHarvestYield>
+              <DrugHarvestYield>-0.15</DrugHarvestYield>
+              <PruningSpeed MayRequire="Ludeon.RimWorld.Ideology">-0.25</PruningSpeed>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- DiplomatCore: reverses the social bonuses
+       socialFightChanceFactor 0.5 stays active.
+       Targets: DiplomatCore -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="DiplomatCore") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="DiplomatCore") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <statOffsets>
+              <NegotiationAbility>-0.20</NegotiationAbility>
+              <SocialImpact>-0.10</SocialImpact>
+              <ArrestSuccessChance>-0.20</ArrestSuccessChance>
+              <SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">-0.20</SuppressionPower>
+              <ConversionPower MayRequire="Ludeon.RimWorld.Ideology">-0.20</ConversionPower>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+</Patch>

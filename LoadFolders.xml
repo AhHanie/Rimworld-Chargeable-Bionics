@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <loadFolders>
   <v1.6>
+    <!-- EPOE folders are listed BEFORE 1.6/Base on purpose: RimWorld applies patches from the
+         last listed folder first, and the EPOE shared-name corrections must run after the
+         Base patches have added the rechargeable comps. -->
+    <li IfModActive="vat.epoeforked">1.6/EPOE</li>
+    <li IfModActiveAll="vat.epoeforked,Ludeon.RimWorld.Royalty">1.6/EPOERoyalty</li>
+    <li IfModActive="vat.epoeforked" IfModNotActive="Ludeon.RimWorld.Royalty">1.6/EPOENoRoyalty</li>
+    <li IfModActiveAll="vat.epoeforked,Ludeon.RimWorld.Anomaly">1.6/EPOEAnomaly</li>
+    <li IfModActive="vat.epoeforked" IfModNotActive="Ludeon.RimWorld.Anomaly">1.6/EPOENoAnomaly</li>
     <li>1.6/Base</li>
     <li IfModActive="Ludeon.RimWorld.Royalty">1.6/Royalty</li>
     <li IfModActive="Ludeon.RimWorld.Biotech">1.6/Biotech</li>

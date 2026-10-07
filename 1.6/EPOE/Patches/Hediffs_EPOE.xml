@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ================================================================
+       Chargeable Bionics: Expanded Prosthetics and Organ Engineering - Forked (vat.epoeforked)
+       Written against EPOE Forked 4.4.7. Each group notes what stays active at zero charge.
+       Excluded on purpose: HookHand, SteelArm, EyePatch, EarBandage, GoldenEye,
+       ArtificialNose, EPOE_ScytherBlade (passive, cosmetic or melee), the optimizer
+       hediffs (biological) and all injury, EMP and glitch status hediffs.
+       ================================================================ -->
+
+  <!-- ================================================================
+       SHARED NAMES: EPOE redefines these vanilla HediffDefs with different values.
+       The core patches in 1.6/Base already add the rechargeable comp to them (to the
+       EPOE node as well, since both share the defName). This file only corrects the
+       depleted consequence. LoadFolders.xml lists this folder BEFORE 1.6/Base so that
+       these corrections run AFTER the core patches added the comp. Each operation
+       is narrowed to EPOE's ParentName and does nothing if the comp is missing.
+       ================================================================ -->
+
+  <!-- EPOE sets partEfficiency 0.80 (core assumed 0.85, 0.50 and 0.65): depleted leaves exactly half
+       Targets: SimpleProstheticLeg, SimpleProstheticArm, CochlearImplant -->
+  <Operation Class="PatchOperationReplace">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="SimpleProstheticLeg" or defName="SimpleProstheticArm" or defName="CochlearImplant") and @ParentName="addedPartSimple"]/comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"]/depletedConsequences/partEfficiencyOffset</xpath>
+    <value><partEfficiencyOffset>-0.40</partEfficiencyOffset></value>
+  </Operation>
+
+  <!-- EPOE sets SimpleProstheticHeart partEfficiency 0.75 (core assumed 0.80): depleted leaves about half
+       Targets: SimpleProstheticHeart -->
+  <Operation Class="PatchOperationReplace">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="SimpleProstheticHeart") and @ParentName="addedPartSurrogate"]/comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"]/depletedConsequences/partEfficiencyOffset</xpath>
+    <value><partEfficiencyOffset>-0.38</partEfficiencyOffset></value>
+  </Operation>
+
+  <!-- BionicSpine: EPOE adds CarryingCapacity +10 on top of the core partEfficiency.
+       The depleted consequence gets the matching -10 (the core patch only has partEfficiencyOffset).
+       BionicJaw, BionicHeart and BionicStomach need no correction: efficiency 1.25 as in core. -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[defName="BionicSpine" and @ParentName="addedPartBionics"]/comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"]/depletedConsequences[not(statOffsets)]</xpath>
+    <value>
+      <statOffsets>
+        <CarryingCapacity>-10</CarryingCapacity>
+      </statOffsets>
+    </value>
+  </Operation>
+
+  <!-- ================================================================
+       NEW EPOE DEFS. Each group: (1) ensure <comps>, (2) append one rechargeable
+       comp unless the def already has one. Both operations use success=Always so a
+       target removed by EPOE's XML Extensions options or by another mod is skipped
+       quietly. Efficiency rules follow the core patches: simple parts keep about
+       half, bionic and advanced parts fall to 0.50 absolute.
+       ================================================================ -->
+
+  <!-- ===== SIMPLE REPLACEMENT PARTS (60 charge, gated by Enable prosthetic patches) ===== -->
+
+  <!-- Simple prosthetics, partEfficiency 0.80: depleted leaves 0.40
+       Targets: LightReceptor, SimpleSpine, SimpleProstheticHand, SimpleProstheticFoot, SimpleProstheticFinger, SimpleProstheticToe -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="LightReceptor" or defName="SimpleSpine" or defName="SimpleProstheticHand" or defName="SimpleProstheticFoot" or defName="SimpleProstheticFinger" or defName="SimpleProstheticToe") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="LightReceptor" or defName="SimpleSpine" or defName="SimpleProstheticHand" or defName="SimpleProstheticFoot" or defName="SimpleProstheticFinger" or defName="SimpleProstheticToe") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>60</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.40</partEfficiencyOffset>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- HydraulicJaw, partEfficiency 1.00: depleted leaves 0.50
+       Eating +0.2 and Talking -0.2 capMods and the jaw verbs stay active at zero charge.
+       Targets: HydraulicJaw -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="HydraulicJaw") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="HydraulicJaw") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>60</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.50</partEfficiencyOffset>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- ===== SURROGATE ORGANS AND BRAIN STIMULATOR (60 charge, gated) ===== -->
+
+  <!-- Surrogate organs, partEfficiency 0.75: depleted leaves about 0.37
+       Targets: SurrogateLung, SurrogateStomach, SurrogateLiver, SurrogateKidney -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="SurrogateLung" or defName="SurrogateStomach" or defName="SurrogateLiver" or defName="SurrogateKidney") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="SurrogateLung" or defName="SurrogateStomach" or defName="SurrogateLiver" or defName="SurrogateKidney") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>60</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.38</partEfficiencyOffset>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- BrainStimulator: cancels the stage partEfficiencyOffset +0.10 on the brain
+       The Consciousness setMax 0.9 cap is a drawback and stays active at zero charge.
+       Targets: BrainStimulator -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="BrainStimulator") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="BrainStimulator") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>60</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.10</partEfficiencyOffset>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- ===== BIONIC PARTS (100 charge) ===== -->
+
+  <!-- Bionic parts, partEfficiency 1.25: depleted leaves 0.50
+       BionicHand and SilentJaw keep their verb tools; SilentJaw keeps its Talking cap of 0.
+       Targets: BionicHand, BionicFoot, SilentJaw -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="BionicHand" or defName="BionicFoot" or defName="SilentJaw") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="BionicHand" or defName="BionicFoot" or defName="SilentJaw") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>100</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.75</partEfficiencyOffset>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- Bionic digits, partEfficiency 1.35: depleted leaves 0.50
+       Targets: BionicFinger, BionicToe -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="BionicFinger" or defName="BionicToe") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="BionicFinger" or defName="BionicToe") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>100</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.85</partEfficiencyOffset>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- ===== SYNTHETIC REPLACEMENTS (100 charge) ===== -->
+
+  <!-- Synthetic organs, partEfficiency 1.25: depleted leaves 0.50
+       BionicHeart and BionicStomach are shared names handled by the core patches.
+       Targets: SyntheticLung, SyntheticLiver, SyntheticKidney -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="SyntheticLung" or defName="SyntheticLiver" or defName="SyntheticKidney") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="SyntheticLung" or defName="SyntheticLiver" or defName="SyntheticKidney") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>100</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.75</partEfficiencyOffset>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- ===== SYNTHETIC IMPLANTS (100 charge) ===== -->
+
+  <!-- MuscleStimulatorArms: cancels CarryingCapacity +50, MeleeHitChance +3 and stage efficiency +0.10
+       Targets: MuscleStimulatorArms -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="MuscleStimulatorArms") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="MuscleStimulatorArms") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>100</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.10</partEfficiencyOffset>
+            <statOffsets>
+              <CarryingCapacity>-50</CarryingCapacity>
+              <MeleeHitChance>-3</MeleeHitChance>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- MuscleStimulatorLegs: cancels MoveSpeed +0.2 and stage efficiency +0.10
+       Targets: MuscleStimulatorLegs -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="MuscleStimulatorLegs") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="MuscleStimulatorLegs") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>100</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.10</partEfficiencyOffset>
+            <statOffsets>
+              <MoveSpeed>-0.2</MoveSpeed>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- AIChip: cancels the stage partEfficiencyOffset +0.40 on the brain
+       The Consciousness +0.25 offset and setMax capMods are not framework consequences and stay active.
+       Targets: AIChip -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="AIChip") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="AIChip") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>100</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.40</partEfficiencyOffset>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- ===== ADVANCED REPLACEMENT PARTS (150 charge) ===== -->
+
+  <!-- Advanced bionic parts, partEfficiency 1.35: depleted leaves 0.50
+       Arm, hand and jaw keep their verb tools.
+       Targets: AdvancedBionicEye, AdvancedBionicArm, AdvancedBionicLeg, AdvancedBionicEar, AdvancedBionicHand, AdvancedBionicFoot, AdvancedBionicFinger, AdvancedBionicToe, AdvancedBionicJaw -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="AdvancedBionicEye" or defName="AdvancedBionicArm" or defName="AdvancedBionicLeg" or defName="AdvancedBionicEar" or defName="AdvancedBionicHand" or defName="AdvancedBionicFoot" or defName="AdvancedBionicFinger" or defName="AdvancedBionicToe" or defName="AdvancedBionicJaw") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="AdvancedBionicEye" or defName="AdvancedBionicArm" or defName="AdvancedBionicLeg" or defName="AdvancedBionicEar" or defName="AdvancedBionicHand" or defName="AdvancedBionicFoot" or defName="AdvancedBionicFinger" or defName="AdvancedBionicToe" or defName="AdvancedBionicJaw") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.85</partEfficiencyOffset>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- AdvancedBionicSpine, partEfficiency 1.25: depleted leaves 0.50 and cancels CarryingCapacity +20
+       Targets: AdvancedBionicSpine -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="AdvancedBionicSpine") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="AdvancedBionicSpine") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.75</partEfficiencyOffset>
+            <statOffsets>
+              <CarryingCapacity>-20</CarryingCapacity>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- ===== ADVANCED EXOSKELETONS (150 charge) ===== -->
+
+  <!-- ExoskeletonSuit: cancels CarryingCapacity +25 and StaggerDurationFactor -0.10
+       Manipulation and Moving capMods stay active at zero charge.
+       Targets: ExoskeletonSuit -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="ExoskeletonSuit") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="ExoskeletonSuit") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <statOffsets>
+              <CarryingCapacity>-25</CarryingCapacity>
+              <StaggerDurationFactor>0.10</StaggerDurationFactor>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- EPIA_ProtectiveExoskeleton: cancels CarryingCapacity +25, StaggerDurationFactor -0.30 and IncomingDamageFactor 0.80 (reciprocal 1.25)
+       The harden ability, EMP reaction and optional EBF max HP comps stay active.
+       Targets: EPIA_ProtectiveExoskeleton -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="EPIA_ProtectiveExoskeleton") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="EPIA_ProtectiveExoskeleton") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <statOffsets>
+              <CarryingCapacity>-25</CarryingCapacity>
+              <StaggerDurationFactor>0.30</StaggerDurationFactor>
+            </statOffsets>
+            <statFactors>
+              <IncomingDamageFactor>1.25</IncomingDamageFactor>
+            </statFactors>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- ===== BIONIC RIBS (100 charge) ===== -->
+
+  <!-- Ribs with effects the framework cannot switch off: charge bar only
+       capMods, painFactor, totalBleedFactor and restFallFactor stay active at zero charge.
+       WakeUpRib MentalBreakThreshold +0.04 is a drawback, so it is not reversed.
+       Targets: MedicalRib, DruggedRib, AdrenalineRib, PainkillerRib, CoagulatorRib, WakeUpRib -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="MedicalRib" or defName="DruggedRib" or defName="AdrenalineRib" or defName="PainkillerRib" or defName="CoagulatorRib" or defName="WakeUpRib") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="MedicalRib" or defName="DruggedRib" or defName="AdrenalineRib" or defName="PainkillerRib" or defName="CoagulatorRib" or defName="WakeUpRib") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>100</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- HeaterRib: reverses ComfyTemperatureMax -2 and ComfyTemperatureMin -12.5
+       Targets: HeaterRib -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="HeaterRib") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="HeaterRib") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>100</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <statOffsets>
+              <ComfyTemperatureMax>2</ComfyTemperatureMax>
+              <ComfyTemperatureMin>12.5</ComfyTemperatureMin>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- CoolerRib: reverses ComfyTemperatureMax +12.5 and ComfyTemperatureMin +2
+       Targets: CoolerRib -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="CoolerRib") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="CoolerRib") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>100</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <statOffsets>
+              <ComfyTemperatureMax>-12.5</ComfyTemperatureMax>
+              <ComfyTemperatureMin>-2</ComfyTemperatureMin>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- RespirationRib: reverses MentalBreakThreshold -0.06
+       The Breathing +0.05 capMod stays active.
+       Targets: RespirationRib -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="RespirationRib") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="RespirationRib") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>100</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <statOffsets>
+              <MentalBreakThreshold>0.06</MentalBreakThreshold>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- ===== GLITTERWORLD TACTICAL DEVICES (150 charge) ===== -->
+
+  <!-- TacticalCorneaImplant: reverses stage efficiency +0.10 and the tactical stat bonuses
+       Targets: TacticalCorneaImplant -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="TacticalCorneaImplant") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="TacticalCorneaImplant") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.10</partEfficiencyOffset>
+            <statOffsets>
+              <ShootingAccuracyPawn>-5</ShootingAccuracyPawn>
+              <AimingDelayFactor>0.15</AimingDelayFactor>
+              <MeleeHitChance>-3</MeleeHitChance>
+              <MeleeDodgeChance>-3</MeleeDodgeChance>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- EPIA_TacticalBionicEye, partEfficiency 1.15: depleted leaves 0.50 and reverses the tactical stat bonuses
+       Targets: EPIA_TacticalBionicEye -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="EPIA_TacticalBionicEye") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="EPIA_TacticalBionicEye") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.65</partEfficiencyOffset>
+            <statOffsets>
+              <ShootingAccuracyPawn>-5</ShootingAccuracyPawn>
+              <AimingDelayFactor>0.15</AimingDelayFactor>
+              <MeleeHitChance>-3</MeleeHitChance>
+              <MeleeDodgeChance>-3</MeleeDodgeChance>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- ===== GLITTERWORLD AI CORES IDENTICAL IN ALL DLC SETS (150 charge) ===== -->
+
+  <!-- EPIA_AuxiliaryAI_Sharpshooter: reverses the accuracy and cooldown bonuses
+       MeleeHitChance -3 is a drawback and stays. The EMP reaction stays active.
+       Targets: EPIA_AuxiliaryAI_Sharpshooter -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="EPIA_AuxiliaryAI_Sharpshooter") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="EPIA_AuxiliaryAI_Sharpshooter") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <statOffsets>
+              <ShootingAccuracyPawn>-10</ShootingAccuracyPawn>
+              <AimingDelayFactor>0.10</AimingDelayFactor>
+              <RangedCooldownFactor>0.10</RangedCooldownFactor>
+              <MortarMissRadiusFactor>0.3</MortarMissRadiusFactor>
+            </statOffsets>
+            <statFactors>
+              <ShootingAccuracyFactor_Long>0.8</ShootingAccuracyFactor_Long>
+              <ShootingAccuracyFactor_Medium>0.8</ShootingAccuracyFactor_Medium>
+            </statFactors>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- EPIA_AuxiliaryAI_Commando: reverses the ranged, melee cooldown and mental break bonuses
+       painFactor 0.85 and the EMP reaction stay active.
+       Targets: EPIA_AuxiliaryAI_Commando -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="EPIA_AuxiliaryAI_Commando") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="EPIA_AuxiliaryAI_Commando") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <statOffsets>
+              <ShootingAccuracyPawn>-5</ShootingAccuracyPawn>
+              <AimingDelayFactor>0.15</AimingDelayFactor>
+              <RangedCooldownFactor>0.15</RangedCooldownFactor>
+              <MentalBreakThreshold>0.12</MentalBreakThreshold>
+            </statOffsets>
+            <statFactors>
+              <MeleeCooldownFactor>1.25</MeleeCooldownFactor>
+            </statFactors>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- EPIA_AuxiliaryAI_Brawler: reverses the melee bonuses and mental break bonus
+       ShootingAccuracyPawn -4 is a drawback and stays. painFactor 0.85 and the EMP reaction stay active.
+       Targets: EPIA_AuxiliaryAI_Brawler -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="EPIA_AuxiliaryAI_Brawler") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="EPIA_AuxiliaryAI_Brawler") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <statOffsets>
+              <MentalBreakThreshold>0.08</MentalBreakThreshold>
+              <MeleeHitChance>-8</MeleeHitChance>
+              <MeleeDodgeChance>-15</MeleeDodgeChance>
+            </statOffsets>
+            <statFactors>
+              <MeleeCooldownFactor>1.1111111</MeleeCooldownFactor>
+              <MeleeDamageFactor>0.9090909</MeleeDamageFactor>
+              <StaggerDurationFactor>1.1111111</StaggerDurationFactor>
+            </statFactors>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- AIPersonaCore: charge bar only
+       Five severity stages with different values, so a fixed inverse would be wrong.
+       Every effect (stats, capMods, pain, rest and hunger factors) stays active at zero charge.
+       Targets: AIPersonaCore -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="AIPersonaCore") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="AIPersonaCore") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        </li>
+    </value>
+  </Operation>
+</Patch>

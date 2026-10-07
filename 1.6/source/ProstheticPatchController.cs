@@ -28,6 +28,20 @@ namespace Chargeable_Bionics
             "VenomFangs",
             "VenomTalon",
 
+            // EPOE Forked simple replacements and surrogates (60 charge only)
+            "LightReceptor",
+            "SimpleSpine",
+            "SimpleProstheticHand",
+            "SimpleProstheticFoot",
+            "SimpleProstheticFinger",
+            "SimpleProstheticToe",
+            "HydraulicJaw",
+            "SurrogateLung",
+            "SurrogateStomach",
+            "SurrogateLiver",
+            "SurrogateKidney",
+            "BrainStimulator",
+
             // Alpha Implants animal prosthetics (1.6)
             "AI_AnimalDenture",
             "AI_AnimalProstheticLeg",
