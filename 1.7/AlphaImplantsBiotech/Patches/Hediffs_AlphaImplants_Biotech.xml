@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicLung"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicLung"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicKidney"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicKidney"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalBionicLiver"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalBionicLiver"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalBionicLung" or defName="AI_AnimalBionicKidney"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>100</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.55</partEfficiencyOffset></depletedConsequences></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalBionicLiver"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>100</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.63</partEfficiencyOffset></depletedConsequences></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalPiercingSpine" or defName="AI_AnimalAcidSpray" or defName="AI_AnimalFoamSpray" or defName="AI_AnimalFireSpew"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>100</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.45</partEfficiencyOffset></depletedConsequences></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalUpsyDaisyVampireyHealyPower"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>100</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick></li></value>
+  </Operation>
+</Patch>

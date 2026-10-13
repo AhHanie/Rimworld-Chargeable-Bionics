@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BodyPartBionicBase">
+    <defName>CB_AnimalChargeBattery</defName>
+    <label>animal charge battery</label>
+    <description>A compact bank of high-density power cells, built to nest alongside an animal's brain tissue and wired into its own bionics. It stores a large charge reserve and slowly feeds it to any depleted bionic or cybernetic implant elsewhere in the animal's body, without needing an external charging station.</description>
+    <descriptionHyperlinks><RecipeDef>InstallCB_AnimalChargeBattery</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Plasteel>20</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+      <Gold>25</Gold>
+    </costList>
+    <statBases>
+      <MarketValue>1400</MarketValue>
+      <Mass>0.5</Mass>
+      <WorkToMake>32000</WorkToMake>
+    </statBases>
+  </ThingDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>CB_AnimalChargeBattery</defName>
+    <label>animal charge battery</label>
+    <labelNoun>an animal charge battery</labelNoun>
+    <description>An installed animal charge battery. A bank of high-density power cells wired into the animal's own bionics, storing a large charge reserve and slowly feeding it to any depleted bionic or cybernetic implant elsewhere in the animal's body.</description>
+    <descriptionHyperlinks><ThingDef>CB_AnimalChargeBattery</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>CB_AnimalChargeBattery</spawnThingOnRemoved>
+    <comps>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>200</maxCharge>
+        <chargeDecayPerTick>0</chargeDecayPerTick>
+      </li>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_ChargeBattery">
+        <chargeRate>0.01</chargeRate>
+        <transferEfficiency>1</transferEfficiency>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- Not inherited from SurgeryInstallImplantBase/SurgeryRemoveImplantBase: both
+       bases carry human-only recipeUsers. Availability for this recipe is instead
+       supplied entirely by the AnimalThingBase recipe-list patch. -->
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>InstallCB_AnimalChargeBattery</defName>
+    <label>install animal charge battery</label>
+    <description>Install an animal charge battery.</description>
+    <descriptionHyperlinks>
+      <ThingDef>CB_AnimalChargeBattery</ThingDef>
+      <HediffDef>CB_AnimalChargeBattery</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing animal charge battery.</jobString>
+    <workerClass>Recipe_InstallImplant</workerClass>
+    <workAmount>2500</workAmount>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <skillRequirements>
+      <Medicine>5</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter><categories><li>Medicine</li></categories></filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>CB_AnimalChargeBattery</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+        <li>CB_AnimalChargeBattery</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>CB_AnimalChargeBattery</addsHediff>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>RemoveCB_AnimalChargeBattery</defName>
+    <label>remove animal charge battery</label>
+    <description>Remove animal charge battery.</description>
+    <descriptionHyperlinks>
+      <ThingDef>CB_AnimalChargeBattery</ThingDef>
+      <HediffDef>CB_AnimalChargeBattery</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Removing animal charge battery.</jobString>
+    <workerClass>Recipe_RemoveImplant</workerClass>
+    <workAmount>2500</workAmount>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <isViolation>true</isViolation>
+    <skillRequirements>
+      <Medicine>5</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter><categories><li>Medicine</li></categories></filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <removesHediff>CB_AnimalChargeBattery</removesHediff>
+  </RecipeDef>
+
+</Defs>

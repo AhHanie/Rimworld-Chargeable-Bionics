@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="AI_AnimalVacSkinGland"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="AI_AnimalVacSkinGland"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalVacSkinGland"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick></li></value>
+  </Operation>
+</Patch>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ================================================================
+       EPOE power arms, Royalty variant (EPOE OtherMods/Royalty): PowerArm 1.10 and
+       AdvancedPowerArm 1.25, each with a ConstructionSpeed bonus.
+       ================================================================ -->
+
+  <!-- PowerArm, partEfficiency 1.10: depleted leaves 0.50 and cancels ConstructionSpeed +0.20
+       Claw verbs stay.
+       Targets: PowerArm -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="PowerArm") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="PowerArm") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>100</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.60</partEfficiencyOffset>
+            <statOffsets>
+              <ConstructionSpeed>-0.20</ConstructionSpeed>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- AdvancedPowerArm, partEfficiency 1.25: depleted leaves 0.50 and cancels ConstructionSpeed +0.35
+       Claw verbs stay.
+       Targets: AdvancedPowerArm -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="AdvancedPowerArm") and not(comps)]</xpath>
+    <value><comps /></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/HediffDef[(defName="AdvancedPowerArm") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
+    <value>
+        <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <maxCharge>150</maxCharge>
+          <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+          <depletedConsequences>
+            <partEfficiencyOffset>-0.75</partEfficiencyOffset>
+            <statOffsets>
+              <ConstructionSpeed>-0.35</ConstructionSpeed>
+            </statOffsets>
+          </depletedConsequences>
+        </li>
+    </value>
+  </Operation>
+</Patch>

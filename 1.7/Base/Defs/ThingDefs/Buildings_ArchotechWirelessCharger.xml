@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>CB_ArchotechWirelessCharger</defName>
+    <label>archotech wireless charger</label>
+    <description>A dense archotech artifact that radiates a field of ambient energy tuned to recharge bionic and cybernetic implants in anyone nearby. Nobody who owns one really understands how it works. It requires a steady power supply to sustain the field.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>ChargeableBionics/Things/Building/ArchotechStation</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>true</rotatable>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <altitudeLayer>Building</altitudeLayer>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <tickerType>Normal</tickerType>
+    <tradeability>Sellable</tradeability>
+    <statBases>
+      <MarketValue>2200</MarketValue>
+      <MaxHitPoints>220</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Mass>20</Mass>
+      <Beauty>4</Beauty>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>500</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="Chargeable_Hediffs_Framework.CompProperties_WirelessCharge">
+        <radius>12.9</radius>
+        <scanIntervalTicks>250</scanIntervalTicks>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Chargeable_Hediffs_Framework.ChargeStationExtension">
+        <chargeRate>0.0833333</chargeRate>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

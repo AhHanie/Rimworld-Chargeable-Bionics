@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ================================================================
+       PASS 1: Ensure every target HediffDef has a <comps> node.
+       Archoborn (innate archite trait, not a removable implant) and
+       LTS_ImplantedToxic (one-shot implanted explosive) are intentionally
+       excluded from Phase 1 scope.
+       ================================================================ -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="Synthwomb"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="Synthwomb"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="LactoStimulator"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="LactoStimulator"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="Archowomb"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="Archowomb"]</xpath>
+      <value><comps /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- ================================================================
+       PASS 2: Add rechargeable comp.
+       ================================================================ -->
+
+  <!-- ==== TIER 1 (maxCharge 100) ==== -->
+
+  <!-- Synthwomb: cancels ChildBirthQualityOffset and Fertility/GestationSpeed factors x1.5.
+       Zero-factor LTS_AgeFertilityImpactFactor cannot be reversed with a zero factor
+       consequence; left uncancelled. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="Synthwomb"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <ChildBirthQualityOffset>-0.1</ChildBirthQualityOffset>
+          </statOffsets>
+          <statFactors>
+            <Fertility>0.6666667</Fertility>
+            <GestationSpeedFactorDummyStat>0.6666667</GestationSpeedFactorDummyStat>
+          </statFactors>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- LactoStimulator: ability-driven (ToggleLactation), no cancellable stat effect. Charge-only. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="LactoStimulator"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>100</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- ==== TIER 2 (maxCharge 150) ==== -->
+
+  <!-- Archowomb: cancels ChildBirthQualityOffset and Fertility/GestationSpeed factors x2.
+       Zero-factor LTS_AgeFertilityImpactFactor cannot be reversed with a zero factor
+       consequence; left uncancelled. ToggleFertility ability remains available. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="Archowomb"]/comps</xpath>
+    <value>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>150</maxCharge>
+        <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
+        <depletedConsequences>
+          <statOffsets>
+            <ChildBirthQualityOffset>-1</ChildBirthQualityOffset>
+          </statOffsets>
+          <statFactors>
+            <Fertility>0.5</Fertility>
+            <GestationSpeedFactorDummyStat>0.5</GestationSpeedFactorDummyStat>
+          </statFactors>
+        </depletedConsequences>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

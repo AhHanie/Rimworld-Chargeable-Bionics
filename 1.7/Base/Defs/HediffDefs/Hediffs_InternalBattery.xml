@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BodyPartBionicBase">
+    <defName>CB_InternalChargeBattery</defName>
+    <label>internal charge battery</label>
+    <description>A compact bank of high-density power cells, built to nest alongside brain tissue and wired into a pawn's own bionics. It stores a large charge reserve and slowly feeds it to any depleted bionic or cybernetic implant elsewhere in the body, without needing an external charging station.</description>
+    <descriptionHyperlinks><RecipeDef>InstallCB_InternalChargeBattery</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Plasteel>20</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+      <Gold>25</Gold>
+    </costList>
+    <statBases>
+      <MarketValue>1400</MarketValue>
+      <Mass>0.5</Mass>
+      <WorkToMake>32000</WorkToMake>
+    </statBases>
+  </ThingDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>CB_InternalChargeBattery</defName>
+    <label>internal charge battery</label>
+    <labelNoun>an internal charge battery</labelNoun>
+    <description>An installed internal charge battery. A bank of high-density power cells wired into the pawn's own bionics, storing a large charge reserve and slowly feeding it to any depleted bionic or cybernetic implant elsewhere in the body.</description>
+    <descriptionHyperlinks><ThingDef>CB_InternalChargeBattery</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>CB_InternalChargeBattery</spawnThingOnRemoved>
+    <comps>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <maxCharge>200</maxCharge>
+        <chargeDecayPerTick>0</chargeDecayPerTick>
+      </li>
+      <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_ChargeBattery">
+        <chargeRate>0.01</chargeRate>
+        <transferEfficiency>1</transferEfficiency>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallCB_InternalChargeBattery</defName>
+    <label>install internal charge battery</label>
+    <description>Install an internal charge battery.</description>
+    <descriptionHyperlinks>
+      <ThingDef>CB_InternalChargeBattery</ThingDef>
+      <HediffDef>CB_InternalChargeBattery</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing internal charge battery.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>CB_InternalChargeBattery</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>CB_InternalChargeBattery</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>CB_InternalChargeBattery</addsHediff>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>RemoveCB_InternalChargeBattery</defName>
+    <label>remove internal charge battery</label>
+    <description>Remove internal charge battery.</description>
+    <descriptionHyperlinks>
+      <ThingDef>CB_InternalChargeBattery</ThingDef>
+      <HediffDef>CB_InternalChargeBattery</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Removing internal charge battery.</jobString>
+    <removesHediff>CB_InternalChargeBattery</removesHediff>
+  </RecipeDef>
+
+</Defs>

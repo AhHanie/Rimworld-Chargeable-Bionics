@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalImmunoenhancer"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalImmunoenhancer"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalHealClotSynergizer"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalHealClotSynergizer"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalDermalArmorGland"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalDermalArmorGland"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationConditional"><xpath>Defs/HediffDef[defName="AI_AnimalSkinHardener"]/comps</xpath><nomatch Class="PatchOperationAdd"><xpath>Defs/HediffDef[defName="AI_AnimalSkinHardener"]</xpath><value><comps /></value></nomatch></Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalNuclearStomach"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>100</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.63</partEfficiencyOffset></depletedConsequences></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalImmunoenhancer" or defName="AI_AnimalCircadianSupercharger" or defName="AI_AnimalHealClotSynergizer" or defName="AI_AnimalDermalArmorGland" or defName="AI_AnimalUnstableSkipSynapsis"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>100</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="AI_AnimalSkinHardener" or defName="AI_AnimalVenomFangs"]/comps</xpath>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick></li></value>
+  </Operation>
+</Patch>
