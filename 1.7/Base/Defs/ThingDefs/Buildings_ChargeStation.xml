@@ -54,6 +54,11 @@
     <modExtensions>
       <li Class="Chargeable_Hediffs_Framework.ChargeStationExtension">
         <chargeRate>0.0833333</chargeRate>
+        <!-- Pack uses per tick (not charge units): the single pack use refills in 10000 ticks. -->
+        <apparelChargeRate>0.0001</apparelChargeRate>
+        <supportedBatteryApparel>
+          <li>CB_ChargerPack</li>
+        </supportedBatteryApparel>
       </li>
     </modExtensions>
   </ThingDef>

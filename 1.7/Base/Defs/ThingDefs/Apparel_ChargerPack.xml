@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==== Wearable charger pack ====
+       One use delivers up to 750 charge in total (five implants of 150) to ANOTHER pawn's
+       rechargeable hediffs, lowest charge percent first. The framework comp supplies the use
+       count, targeting gizmo and job. Internal battery hediffs are excluded by the framework
+       itself, so they cannot be refilled by this pack.
+       The pack is refilled by wearing it near a powered charge station (see the station defs). -->
+  <ThingDef ParentName="ApparelNoQualityBase">
+    <defName>CB_ChargerPack</defName>
+    <label>charger pack</label>
+    <description>A worn spacer power pack that stores a single service of up to 750 charge. The wearer can order it to charge the rechargeable implants of another colony pawn, filling the emptiest implants first until the charge runs out, enough to fully recharge up to five of the largest implants. The service spends the pack's charge even if the recipient needed less. Internal charge batteries cannot be recharged with it. Refill its uses by wearing it while using a powered bionic charging station, or while standing near a powered archotech wireless charger; a pack lying on the ground will not recharge.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>ChargeableBionics/Things/Item/ChargerPack</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>0.75</drawSize>
+    </graphicData>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedPack</unfinishedThingDef>
+      <researchPrerequisite>Bionics</researchPrerequisite>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <useIngredientsForColor>false</useIngredientsForColor>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <displayPriority>320</displayPriority>
+    </recipeMaker>
+    <costList>
+      <Steel>60</Steel>
+      <Plasteel>20</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Mass>3</Mass>
+      <Flammability>0.3</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <thingCategories>
+      <li>ApparelUtility</li>
+    </thingCategories>
+    <generateAllowChance>0</generateAllowChance>
+    <apparel>
+      <wornGraphicPath>ChargeableBionics/Things/Item/ChargerPack</wornGraphicPath>
+      <wornGraphicData>
+        <renderUtilityAsPack>true</renderUtilityAsPack>
+        <north>
+          <offset>(0,-0.15)</offset>
+        </north>
+        <east>
+          <offset>(-0.35,-0.05)</offset>
+          <thin><offset>(0.05,0)</offset></thin>
+          <hulk><offset>(-0.1,0)</offset></hulk>
+          <fat><offset>(-0.15,0)</offset></fat>
+        </east>
+        <west>
+          <offset>(0.35,-0.05)</offset>
+          <thin><offset>(-0.05,0)</offset></thin>
+          <hulk><offset>(0.1,0)</offset></hulk>
+          <fat><offset>(0.15,0)</offset></fat>
+        </west>
+        <male>  <scale>(0.75,0.75)</scale></male>
+        <female><scale>(0.75,0.75)</scale></female>
+        <thin>  <scale>(0.7,0.7)</scale></thin>
+        <hulk>  <scale>(0.9,0.9)</scale></hulk>
+        <fat>   <scale>(0.9,0.9)</scale></fat>
+      </wornGraphicData>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <wearPerDay>0</wearPerDay>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+    </apparel>
+    <comps>
+      <li Class="Chargeable_Hediffs_Framework.CompProperties_ApparelChargeBattery">
+        <maxCharges>1</maxCharges>
+        <chargePerUse>750</chargePerUse>
+        <rechargeDurationTicks>240</rechargeDurationTicks>
+        <chargeNoun>pack use</chargeNoun>
+        <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+        <displayGizmoWhileDrafted>true</displayGizmoWhileDrafted>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>
