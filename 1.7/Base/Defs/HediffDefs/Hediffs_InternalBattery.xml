@@ -27,6 +27,7 @@
     <spawnThingOnRemoved>CB_InternalChargeBattery</spawnThingOnRemoved>
     <comps>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>200</maxCharge>
         <chargeDecayPerTick>0</chargeDecayPerTick>
       </li>

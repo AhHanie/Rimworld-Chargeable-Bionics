@@ -58,6 +58,7 @@
     <xpath>Defs/HediffDef[defName="SimpleProstheticLeg"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>60</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -72,6 +73,7 @@
     <xpath>Defs/HediffDef[defName="SimpleProstheticArm"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>60</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -86,6 +88,7 @@
     <xpath>Defs/HediffDef[defName="SimpleProstheticHeart"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>60</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -100,6 +103,7 @@
     <xpath>Defs/HediffDef[defName="CochlearImplant"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>60</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -114,6 +118,7 @@
     <xpath>Defs/HediffDef[defName="PowerClaw"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>60</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -130,6 +135,7 @@
     <xpath>Defs/HediffDef[defName="Joywire" or defName="Painstopper"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>60</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
       </li>

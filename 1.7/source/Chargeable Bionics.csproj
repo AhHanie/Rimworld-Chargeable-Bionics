@@ -13,6 +13,7 @@
     <OutputPath>..\Base\Assemblies\</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <RimWorldDir Condition="'$(RimWorldDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\RimWorld</RimWorldDir>
+    <ChargeableHediffsFrameworkDll Condition="'$(ChargeableHediffsFrameworkDll)' == ''">$(MSBuildThisFileDirectory)..\..\..\Chargeable Hediff Framework\1.7\Assemblies\Chargeable Hediffs Framework.dll</ChargeableHediffsFrameworkDll>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <DebugType>embedded</DebugType>
@@ -33,9 +34,14 @@
       <HintPath>$(RimWorldDir)\UnityStubs.dll</HintPath>
       <Private>false</Private>
     </Reference>
+    <Reference Include="Chargeable Hediffs Framework">
+      <HintPath>$(ChargeableHediffsFrameworkDll)</HintPath>
+      <Private>false</Private>
+    </Reference>
   </ItemGroup>
   <Target Name="CheckGameReferences" BeforeTargets="ResolveAssemblyReferences;CoreCompile">
     <Error Condition="!Exists('$(RimWorldDir)\Assembly-CSharp.dll')" Text="RimWorldDir must point to the 1.7 game root: $(RimWorldDir)" />
     <Error Condition="!Exists('$(RimWorldDir)\UnityStubs.dll')" Text="UnityStubs.dll is missing from RimWorldDir: $(RimWorldDir)" />
+    <Error Condition="!Exists('$(ChargeableHediffsFrameworkDll)')" Text="Build the 1.7 Chargeable Hediffs Framework first or set ChargeableHediffsFrameworkDll to its DLL. File not found: $(ChargeableHediffsFrameworkDll)" />
   </Target>
 </Project>

@@ -70,6 +70,7 @@
     <xpath>Defs/HediffDef[(defName="LightReceptor" or defName="SimpleSpine" or defName="SimpleProstheticHand" or defName="SimpleProstheticFoot" or defName="SimpleProstheticFinger" or defName="SimpleProstheticToe") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>60</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -93,6 +94,7 @@
     <xpath>Defs/HediffDef[(defName="HydraulicJaw") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>60</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -117,6 +119,7 @@
     <xpath>Defs/HediffDef[(defName="SurrogateLung" or defName="SurrogateStomach" or defName="SurrogateLiver" or defName="SurrogateKidney") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>60</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -140,6 +143,7 @@
     <xpath>Defs/HediffDef[(defName="BrainStimulator") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>60</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -165,6 +169,7 @@
     <xpath>Defs/HediffDef[(defName="BionicHand" or defName="BionicFoot" or defName="SilentJaw") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>100</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -187,6 +192,7 @@
     <xpath>Defs/HediffDef[(defName="BionicFinger" or defName="BionicToe") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>100</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -212,6 +218,7 @@
     <xpath>Defs/HediffDef[(defName="SyntheticLung" or defName="SyntheticLiver" or defName="SyntheticKidney") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>100</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -236,6 +243,7 @@
     <xpath>Defs/HediffDef[(defName="MuscleStimulatorArms") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>100</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -262,6 +270,7 @@
     <xpath>Defs/HediffDef[(defName="MuscleStimulatorLegs") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>100</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -288,6 +297,7 @@
     <xpath>Defs/HediffDef[(defName="AIChip") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>100</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -313,6 +323,7 @@
     <xpath>Defs/HediffDef[(defName="AdvancedBionicEye" or defName="AdvancedBionicArm" or defName="AdvancedBionicLeg" or defName="AdvancedBionicEar" or defName="AdvancedBionicHand" or defName="AdvancedBionicFoot" or defName="AdvancedBionicFinger" or defName="AdvancedBionicToe" or defName="AdvancedBionicJaw") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>150</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -335,6 +346,7 @@
     <xpath>Defs/HediffDef[(defName="AdvancedBionicSpine") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>150</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -363,6 +375,7 @@
     <xpath>Defs/HediffDef[(defName="ExoskeletonSuit") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>150</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -389,6 +402,7 @@
     <xpath>Defs/HediffDef[(defName="EPIA_ProtectiveExoskeleton") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>150</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -421,6 +435,7 @@
     <xpath>Defs/HediffDef[(defName="MedicalRib" or defName="DruggedRib" or defName="AdrenalineRib" or defName="PainkillerRib" or defName="CoagulatorRib" or defName="WakeUpRib") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>100</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         </li>
@@ -440,6 +455,7 @@
     <xpath>Defs/HediffDef[(defName="HeaterRib") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>100</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -465,6 +481,7 @@
     <xpath>Defs/HediffDef[(defName="CoolerRib") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>100</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -491,6 +508,7 @@
     <xpath>Defs/HediffDef[(defName="RespirationRib") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>100</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -517,6 +535,7 @@
     <xpath>Defs/HediffDef[(defName="TacticalCorneaImplant") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>150</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -545,6 +564,7 @@
     <xpath>Defs/HediffDef[(defName="EPIA_TacticalBionicEye") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>150</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -576,6 +596,7 @@
     <xpath>Defs/HediffDef[(defName="EPIA_AuxiliaryAI_Sharpshooter") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>150</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -608,6 +629,7 @@
     <xpath>Defs/HediffDef[(defName="EPIA_AuxiliaryAI_Commando") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>150</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -639,6 +661,7 @@
     <xpath>Defs/HediffDef[(defName="EPIA_AuxiliaryAI_Brawler") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>150</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -672,6 +695,7 @@
     <xpath>Defs/HediffDef[(defName="AIPersonaCore") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>150</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         </li>

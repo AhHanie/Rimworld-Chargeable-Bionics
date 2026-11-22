@@ -180,6 +180,7 @@
     <xpath>Defs/HediffDef[defName="Neurocalculator"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -196,6 +197,7 @@
     <xpath>Defs/HediffDef[defName="LearningAssistant"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -212,6 +214,7 @@
     <xpath>Defs/HediffDef[defName="GastroAnalyzer"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -228,6 +231,7 @@
     <xpath>Defs/HediffDef[defName="Immunoenhancer"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -246,6 +250,7 @@
     <xpath>Defs/HediffDef[defName="Coagulator" or defName="HealingEnhancer" or defName="LoveEnhancer" or defName="CircadianHalfCycler"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
       </li>
@@ -257,6 +262,7 @@
     <xpath>Defs/HediffDef[defName="ToughskinGland"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -275,6 +281,7 @@
     <xpath>Defs/HediffDef[defName="ArmorskinGland"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -293,6 +300,7 @@
     <xpath>Defs/HediffDef[defName="StoneskinGland"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -311,6 +319,7 @@
     <xpath>Defs/HediffDef[defName="AestheticShaper" or defName="AestheticNose"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -327,6 +336,7 @@
     <xpath>Defs/HediffDef[defName="DetoxifierStomach" or defName="ReprocessorStomach" or defName="NuclearStomach"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -342,6 +352,7 @@
     <xpath>Defs/HediffDef[defName="CircadianAssistant"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
       </li>
@@ -355,6 +366,7 @@
     <xpath>Defs/HediffDef[defName="PsychicSensitizer"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>150</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -372,6 +384,7 @@
     <xpath>Defs/HediffDef[defName="PsychicHarmonizer"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>150</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
       </li>
@@ -383,6 +396,7 @@
     <xpath>Defs/HediffDef[defName="PsychicReader"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>150</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>

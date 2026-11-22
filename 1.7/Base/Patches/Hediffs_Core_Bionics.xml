@@ -90,6 +90,7 @@
     <xpath>Defs/HediffDef[defName="BionicArm" or defName="BionicEye" or defName="BionicLeg" or defName="BionicHeart" or defName="BionicStomach" or defName="BionicEar" or defName="BionicJaw"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -104,6 +105,7 @@
     <xpath>Defs/HediffDef[defName="BionicSpine" or defName="BionicTongue"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>

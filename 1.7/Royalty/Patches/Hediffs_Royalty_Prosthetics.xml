@@ -25,6 +25,7 @@
     <xpath>Defs/HediffDef[defName="DrillArm" or defName="FieldHand"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -43,6 +44,7 @@
     <xpath>Defs/HediffDef[defName="Mindscrew" or defName="HandTalon" or defName="ElbowBlade" or defName="KneeSpike" or defName="VenomFangs" or defName="VenomTalon"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
       </li>

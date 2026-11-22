@@ -32,6 +32,7 @@
     <xpath>Defs/HediffDef[defName="LTS_ShoulderBeamTurret"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
       </li>
@@ -43,6 +44,7 @@
     <xpath>Defs/HediffDef[defName="LTS_Gravlifter"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>150</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
       </li>

@@ -9,6 +9,6 @@
   </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/HediffDef[defName="AI_AnimalVacSkinGland"]/comps</xpath>
-    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick></li></value>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" /><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick></li></value>
   </Operation>
 </Patch>

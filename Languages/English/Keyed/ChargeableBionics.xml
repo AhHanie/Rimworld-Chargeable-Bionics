@@ -6,6 +6,8 @@
 
   <ChargeableBionics.EnableProstheticPatches>Enable rechargeable prosthetics</ChargeableBionics.EnableProstheticPatches>
   <ChargeableBionics.EnableProstheticPatchesTooltip>When enabled, basic industrial prosthetics (prosthetic limbs, cochlear implants, power claws, and similar Royalty implants) also need to be recharged, using a lower capacity tier than true bionics. When disabled, these prosthetics behave as in vanilla.</ChargeableBionics.EnableProstheticPatchesTooltip>
-  <ChargeableBionics.RestartRequired>Changes to this setting require a restart or mod list reload to take effect.</ChargeableBionics.RestartRequired>
+  <ChargeableBionics.ColonyPawnsOnly>Limit chargeable bionics to colony pawns</ChargeableBionics.ColonyPawnsOnly>
+  <ChargeableBionics.ColonyPawnsOnlyTooltip>Only permanent player-faction pawns, including colony animals and slaves, use chargeable bionics. Prisoners and temporary guests are excluded.</ChargeableBionics.ColonyPawnsOnlyTooltip>
+  <ChargeableBionics.RestartRequired>Restart Rimworld to apply these changes.</ChargeableBionics.RestartRequired>
 
 </LanguageData>

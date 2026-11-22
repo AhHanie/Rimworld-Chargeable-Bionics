@@ -14,6 +14,10 @@ namespace Chargeable_Bionics
                 "ChargeableBionics.EnableProstheticPatches".Translate(),
                 ref ModSettings.enableProstheticPatches,
                 "ChargeableBionics.EnableProstheticPatchesTooltip".Translate());
+            listing.CheckboxLabeled(
+                "ChargeableBionics.ColonyPawnsOnly".Translate(),
+                ref ModSettings.colonyPawnsOnly,
+                "ChargeableBionics.ColonyPawnsOnlyTooltip".Translate());
 
             listing.Gap();
             GUI.color = Color.yellow;

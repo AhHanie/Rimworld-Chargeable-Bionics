@@ -72,6 +72,7 @@
     <xpath>Defs/HediffDef[defName="NeuralHeatsink"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -90,6 +91,7 @@
     <xpath>Defs/HediffDef[defName="LeftExtraDrillArm" or defName="RightExtraDrillArm"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -108,6 +110,7 @@
     <xpath>Defs/HediffDef[defName="LeftExtraFieldHand" or defName="RightExtraFieldHand"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>
@@ -124,6 +127,7 @@
     <xpath>Defs/HediffDef[defName="LTS_ScorpionTail"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
       </li>
@@ -137,6 +141,7 @@
     <xpath>Defs/HediffDef[defName="LTS_PrestigeSubdermalArmour"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>150</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences>

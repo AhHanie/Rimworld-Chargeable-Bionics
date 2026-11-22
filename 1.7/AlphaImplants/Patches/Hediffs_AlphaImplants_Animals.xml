@@ -42,6 +42,7 @@
     <xpath>Defs/HediffDef[defName="AI_AnimalBionicLeg" or defName="AI_AnimalBionicArm" or defName="AI_AnimalBionicJaw" or defName="AI_AnimalBionicHeart" or defName="AI_AnimalBionicStomach" or defName="AI_AnimalBionicEye" or defName="AI_AnimalBionicNose" or defName="AI_AnimalBionicEar" or defName="AI_AnimalBionicBeak" or defName="AI_AnimalBionicTentacle" or defName="AI_AnimalBionicBuoyancy" or defName="AI_AnimalBionicWing" or defName="AI_AnimalBionicBlade" or defName="AI_AnimalBionicStinger" or defName="AI_AnimalBionicHorn"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences><partEfficiencyOffset>-0.63</partEfficiencyOffset></depletedConsequences>
@@ -53,17 +54,18 @@
        base 1.6 folder. Their active effects are provided by abilities/verb-givers. -->
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/HediffDef[defName="AI_AnimalVenomousSpitter" or defName="AI_AnimalAcidicSpitter" or defName="AI_AnimalLightFocusingLens" or defName="AI_AnimalHyperAcidicStomach" or defName="AI_AnimalPetrifyingGaze"]/comps</xpath>
-    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>100</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.38</partEfficiencyOffset></depletedConsequences></li></value>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" /><maxCharge>100</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.38</partEfficiencyOffset></depletedConsequences></li></value>
   </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/HediffDef[defName="AI_AnimalRangedSpinneret" or defName="AI_AnimalBarbedQuillThrower" or defName="AI_AnimalQuadTeslaCannon" or defName="AI_AnimalBioelectricOrgan" or defName="AI_AnimalWispFire" or defName="AI_AnimalAcidicBreath" or defName="AI_AnimalFireBreath" or defName="AI_AnimalToxicBreath"]/comps</xpath>
-    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>100</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick></li></value>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" /><maxCharge>100</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick></li></value>
   </Operation>
 
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/HediffDef[defName="AI_AnimalBionicSpine"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
         <depletedConsequences><partEfficiencyOffset>-0.50</partEfficiencyOffset></depletedConsequences>
@@ -78,6 +80,7 @@
     <xpath>Defs/HediffDef[defName="AI_AnimalBionicTail" or defName="AI_AnimalStealthskinImplant" or defName="AI_AnimalWorkChipFlick" or defName="AI_AnimalWorkChipClean" or defName="AI_AnimalWorkChipSlaughter" or defName="AI_AnimalWorkChipMine" or defName="AI_AnimalWorkChipFeedPatient" or defName="AI_AnimalWorkChipHarvest" or defName="AI_AnimalWorkChipHunt" or defName="AI_AnimalWorkChipSow" or defName="AI_AnimalShrinker" or defName="AI_AnimalEnlarger"]/comps</xpath>
     <value>
       <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+        <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
         <maxCharge>100</maxCharge>
         <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
       </li>
@@ -91,43 +94,43 @@
   <!-- Animal prosthetics use the same lower, 60-unit charge tier as vanilla prosthetics. -->
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/HediffDef[defName="AI_AnimalProstheticLeg" or defName="AI_AnimalProstheticBuoyancy" or defName="AI_AnimalProstheticWing"]/comps</xpath>
-    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.43</partEfficiencyOffset></depletedConsequences></li></value>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" /><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.43</partEfficiencyOffset></depletedConsequences></li></value>
   </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/HediffDef[defName="AI_AnimalProstheticArm" or defName="AI_AnimalProstheticBlade" or defName="AI_AnimalProstheticStinger" or defName="AI_AnimalProstheticHorn"]/comps</xpath>
-    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.25</partEfficiencyOffset></depletedConsequences></li></value>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" /><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.25</partEfficiencyOffset></depletedConsequences></li></value>
   </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/HediffDef[defName="AI_AnimalProstheticJaw" or defName="AI_AnimalProstheticBeak"]/comps</xpath>
-    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.48</partEfficiencyOffset></depletedConsequences></li></value>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" /><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.48</partEfficiencyOffset></depletedConsequences></li></value>
   </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/HediffDef[defName="AI_AnimalDenture" or defName="AI_AnimalProstheticHeart"]/comps</xpath>
-    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.40</partEfficiencyOffset></depletedConsequences></li></value>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" /><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.40</partEfficiencyOffset></depletedConsequences></li></value>
   </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/HediffDef[defName="AI_AnimalProstheticSpine"]/comps</xpath>
-    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.30</partEfficiencyOffset></depletedConsequences></li></value>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" /><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.30</partEfficiencyOffset></depletedConsequences></li></value>
   </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/HediffDef[defName="AI_AnimalProstheticStomach" or defName="AI_AnimalProstheticLung" or defName="AI_AnimalProstheticKidney" or defName="AI_AnimalProstheticLiver"]/comps</xpath>
-    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.38</partEfficiencyOffset></depletedConsequences></li></value>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" /><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.38</partEfficiencyOffset></depletedConsequences></li></value>
   </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/HediffDef[defName="AI_AnimalPowerClaw"]/comps</xpath>
-    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.50</partEfficiencyOffset></depletedConsequences></li></value>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" /><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.50</partEfficiencyOffset></depletedConsequences></li></value>
   </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/HediffDef[defName="AI_AnimalProstheticTentacle"]/comps</xpath>
-    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.35</partEfficiencyOffset></depletedConsequences></li></value>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" /><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.35</partEfficiencyOffset></depletedConsequences></li></value>
   </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/HediffDef[defName="AI_AnimalJump"]/comps</xpath>
-    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.45</partEfficiencyOffset></depletedConsequences></li></value>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" /><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick><depletedConsequences><partEfficiencyOffset>-0.45</partEfficiencyOffset></depletedConsequences></li></value>
   </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/HediffDef[defName="AI_AnimalProstheticTail" or defName="AI_AnimalPainstopper" or defName="AI_AnimalController" or defName="AI_AnimalThermoregulator" or defName="AI_AnimalChemfuelNodules"]/comps</xpath>
-    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick></li></value>
+    <value><li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"><activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" /><maxCharge>60</maxCharge><chargeDecayPerTick>0.0001666667</chargeDecayPerTick></li></value>
   </Operation>
 
 </Patch>

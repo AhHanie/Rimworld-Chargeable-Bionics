@@ -10,9 +10,12 @@ namespace Chargeable_Bionics
 {
     public class Mod: Verse.Mod
     {
+        internal static bool ColonyPawnsOnly { get; private set; }
+
         public Mod(ModContentPack content) : base(content)
         {
             GetSettings<ModSettings>();
+            ColonyPawnsOnly = ModSettings.colonyPawnsOnly;
             LongEventHandler.QueueLongEvent(Init, "ChargeableBionics.LoadingLabel", doAsynchronously: false, null);
         }
 

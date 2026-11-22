@@ -20,6 +20,7 @@
     <xpath>Defs/HediffDef[(defName="PowerArm") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>100</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
@@ -43,6 +44,7 @@
     <xpath>Defs/HediffDef[(defName="AdvancedPowerArm") and not(comps/li[@Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable"])]/comps</xpath>
     <value>
         <li Class="Chargeable_Hediffs_Framework.HediffCompProperties_Rechargeable">
+          <activationWorker Class="Chargeable_Bionics.ColonyChargeActivationWorker" />
           <maxCharge>150</maxCharge>
           <chargeDecayPerTick>0.0001666667</chargeDecayPerTick>
           <depletedConsequences>
